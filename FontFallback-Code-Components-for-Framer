@@ -1,0 +1,111 @@
+import * as React from "react"
+
+const CSS = `
+/* SFProJPDisplay系フォントのマッピング
+実際のsrc: urlはdevtool>elments>font-faceで検索、別weightは個別追加してください
+*/
+@font-face {
+  font-family: "SF Pro JP";
+  src: url("https://framerusercontent.com/assets/YCkf1kWeFJRCzfB8pVU4ssk6Wlc.woff2") format("woff2");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-family: "SF Pro JP";
+  src: url("https://framerusercontent.com/assets/edxHpiF9tkcryxoV3B8IDUmc94.woff2") format("woff2");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 500;
+}
+@font-face {
+  font-family: "SF Pro JP";
+  src: url("https://framerusercontent.com/assets/Xs81jVM1Hd0WuUoSOHteMYMmawQ.woff2") format("woff2");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 700;
+}
+
+/* Variable非対応フォントのfont-weightマッピング */
+:where(.framer-text, [data-framer-component-type="Text"]):is(
+  [style*='wght" 400'],
+) { font-weight: 400 !important; }
+
+:where(.framer-text, [data-framer-component-type="Text"]):is(
+  [style*='wght" 500'],
+) { font-weight: 500 !important; }
+
+:where(.framer-text, [data-framer-component-type="Text"]):is(
+  [style*='wght" 700'],
+) { font-weight: 700 !important; }
+
+/* SF Pro + JP */
+:where(.framer-text, [data-framer-component-type="Text"], [class*="framer-styles-preset-"], [style*="--framer-font-family"]):is(
+  [data-framer-font*="SF Pro"],
+  [style*="SF Pro"],
+  [style*='--framer-font-family: "SF Pro'],
+  [style*='--framer-font-family-preview: "SF Pro'],
+  .framer-styles-preset-5tsm7s/* text style font:SF Pro */
+) {
+  --framer-font-family:
+    "SF Pro","SF Pro JP","SF Pro Display"!important;
+    font-family: var(--framer-font-family, inherit) !important;
+  --framer-font-family-preview:
+    "SF Pro","SF Pro JP","SF Pro Display"!important;
+}
+
+/* SF Pro JP Display + */
+:where(.framer-text, [data-framer-component-type="Text"], [class*="framer-styles-preset-"], [style*="--framer-font-family"]):is(
+  [data-framer-font*="SF Pro Display"],
+  [data-framer-font*="SFProJP"],
+  [style*="SF Pro Display"],
+  [style*="SFProJP"],
+  [style*='--framer-font-family: "SF Pro Display'],
+  [style*='--framer-font-family: "SFProJP'],
+  [style*='--framer-font-family-preview: "SF Pro Display'],
+  [style*='--framer-font-family-preview: "SFProJP'],
+  .framer-styles-preset-1cn2i1,/* text style font:SFProJP */
+  .framer-styles-preset-4qi9iu/* text style font:SF Pro Display */
+) {
+  --framer-font-family:
+    "SF Pro Display","SF Pro JP","SF Pro"!important;
+    font-family: var(--framer-font-family, inherit) !important;
+  --framer-font-family-preview:
+    "SF Pro Display","SF Pro JP","SF Pro"!important;
+}
+
+:where(.framer-text, [data-framer-component-type="Text"]) * {
+  font-family: inherit !important;
+  font-weight: inherit !important;
+}
+
+/* 効き確認用  
+.framer-text { outline: 1px solid red !important; }
+*/
+
+`
+
+function FontFallback() {
+    React.useEffect(() => {
+        if (typeof document === "undefined") return
+        const id = "framer-font-fallback"
+        if (document.getElementById(id)) return
+        const style = document.createElement("style")
+        style.id = id
+        style.textContent = CSS
+        document.head.appendChild(style)
+        return () => {
+            if (document.getElementById(id) === style) {
+                style.remove()
+            }
+        }
+    }, [])
+
+    return (
+        <div
+            style={{ width: 1, height: 1, opacity: 0, pointerEvents: "none" }}
+        />
+    )
+}
+
+export default FontFallback
