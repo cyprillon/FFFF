@@ -11,7 +11,7 @@ https://github.com/cyprillon/FFFF/edit/main/README.md#:~:text=README.md-,SFProJP
 FramerのUI設定ではフォント一つしか選べない
 custom codeはDOM下の公開ページしか効かない
 それではデザイン時は気持ち悪い
-特にSF Pro JPを使う場合は必須ですので（そのフォント自体、中身英語が入ってないから、Framerで普通のやり方だと使えるものにならない）
+特にSF Pro JPを使う場合は必須ですので（そのフォント自体、中身英数字が入ってないから、Framerで普通のやり方だと使えるものにならない）
 
 ## 日本語と英語別々混在するフォントをデザイン時にそのまま反映する方法：
 Code Componentsを作成して　フレーム下の任意位置に配置
