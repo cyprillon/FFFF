@@ -1,7 +1,8 @@
 # FFFF
-Font Fallback for Framer
-https://note.com/bk_chou/n/n2b51eb10e81c
-Framerデザイン/プレビュー画面上の日本語英語それぞれ指定の混在Font/SF Pro JP/FontFallback/variable style wght対応
+Font Fallback for Framer<br>
+https://note.com/bk_chou/n/n2b51eb10e81c<br>
+Framerデザイン/プレビュー画面上の日本語英語それぞれ指定の混在Font/SF Pro JP/FontFallback/variable style wght対応<br>
+
 FramerのUI設定ではフォント一つしか選べない
 custom codeはDOM下の公開ページしか効かない
 それではデザイン時は気持ち悪い
@@ -11,23 +12,23 @@ custom codeはDOM下の公開ページしか効かない
 Code Componentsを作成して　フレーム下の任意位置に配置
 またはlayout templateに配置して、全てのページに適用
 
-例：
-日本語
-SFProJPDisplay-Regular　//Weight:Regular
-SFProJPDisplay-Medium　//Weight:Regular
-SFProJPDisplay-Bold　//Weight:Regular
-英語
-SF Pro Display　//Weight:Regular/Medium/Bold
-SF Pro //Variable
+例：<br>
+日本語<br>
+SFProJPDisplay-Regular　//Weight:Regular<br>
+SFProJPDisplay-Medium　//Weight:Regular<br>
+SFProJPDisplay-Bold　//Weight:Regular<br>
+英語<br>
+SF Pro Display　//Weight:Regular/Medium/Bold<br>
+SF Pro //Variable<br>
 
-SFProJPDisplay系を一つのフォントに統合する
-Variable非対応フォントのfont-weightをstyle*='wght"にマッピング
+SFProJPDisplay系を一つのフォントに統合する<br>
+Variable非対応フォントのfont-weightをstyle*='wght"にマッピング<br>
 （あとでSF Proとセットで使うため）
 
 ## 注意
-text styleの場合はランダムの.framer-styles-preset-*****を拾って個別対応
-previewに効くためには必ずコンポーネントをフレーム内に置く
-一番外側に置くとデザイン画面では効きますが、プレビュー時には拾えないです
-※テキスト編集モード時は反映しない
+text styleの場合はランダムの.framer-styles-preset-*****を拾って個別対応<br>
+previewに効くためには必ずコンポーネントをフレーム内に置く<br>
+一番外側に置くとデザイン画面では効きますが、プレビュー時には拾えないです<br>
+※テキスト編集モード時は反映しない<br>
 （PreviewのほうはCustom CSSじゃなく Code Componentで効く
 Code Componentを全てのページに配置した場合はCustom CSS不要）
