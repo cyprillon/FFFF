@@ -3,6 +3,11 @@ Font Fallback for Framer<br>
 https://note.com/bk_chou/n/n2b51eb10e81c<br>
 Framerデザイン/プレビュー画面上の日本語英語それぞれ指定の混在Font/SF Pro JP/FontFallback/variable style wght対応<br>
 
+#### Code Componet化用のコード
+https://github.com/cyprillon/FFFF/edit/main/README.md#:~:text=FontFallback-,%2D,-Code%2DComponents%2Dfor
+#### SF Pro JP ダウンロード
+https://github.com/cyprillon/FFFF/edit/main/README.md#:~:text=README.md-,SFProJP,-.sh
+
 FramerのUI設定ではフォント一つしか選べない
 custom codeはDOM下の公開ページしか効かない
 それではデザイン時は気持ち悪い
